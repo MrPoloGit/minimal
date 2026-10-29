@@ -1,16 +1,69 @@
 @import "fonts";
 @import "rouge-github";
 
+:root {
+  --bg: #fff;
+  --text: #727272;
+  --heading: #222;
+  --heading-h2: #393939;
+  --heading-h3: #494949;
+  --link: #267CB9;
+  --link-hover: #069;
+  --small-text: #777;
+  --border: #e5e5e5;
+  --code-text: #333;
+  --code-bg: #f8f8f8;
+  --downloads-bg: #f4f4f4;
+  --downloads-border: #e0e0e0;
+  --downloads-text: #676767;
+  --downloads-hover: #675C5C;
+  --downloads-active: #f0f0f0;
+  --strong: #222;
+  --kbd-bg: #fafbfc;
+  --kbd-border: #c6cbd1;
+  --kbd-border-bottom: #959da5;
+  --kbd-text: #444d56;
+  --dt: #444;
+  --th: #444;
+}
+
+[data-theme="dark"] {
+  --bg: #1b1b1b;
+  --text: #c9c9c9;
+  --heading: #f2f2f2;
+  --heading-h2: #e6e6e6;
+  --heading-h3: #d9d9d9;
+  --link: #6cb6ff;
+  --link-hover: #9ecbff;
+  --small-text: #a0a0a0;
+  --border: #3a3a3a;
+  --code-text: #e6e6e6;
+  --code-bg: #262626;
+  --downloads-bg: #262626;
+  --downloads-border: #3a3a3a;
+  --downloads-text: #c9c9c9;
+  --downloads-hover: #e6e6e6;
+  --downloads-active: #2e2e2e;
+  --strong: #f2f2f2;
+  --kbd-bg: #262626;
+  --kbd-border: #3a3a3a;
+  --kbd-border-bottom: #4a4a4a;
+  --kbd-text: #c9c9c9;
+  --dt: #d9d9d9;
+  --th: #d9d9d9;
+}
+
 body {
-  background-color: #fff;
+  background-color: var(--bg);
   padding:50px;
   font: 14px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color:#727272;
+  color: var(--text);
   font-weight:400;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color:#222;
+  color: var(--heading);
   margin:0 0 20px;
 }
 
@@ -27,32 +80,32 @@ h1 {
 }
 
 h2 {
-  color:#393939;
+  color: var(--heading-h2);
 }
 
 h3, h4, h5, h6 {
-  color:#494949;
+  color: var(--heading-h3);
 }
 
 a {
-  color:#267CB9;
+  color: var(--link);
   text-decoration:none;
 }
 
 a:hover, a:focus {
-  color:#069;
+  color: var(--link-hover);
   font-weight: bold;
 }
 
 a small {
   font-size:11px;
-  color:#777;
+  color: var(--small-text);
   margin-top:-0.3em;
   display:block;
 }
 
 a:hover small {
-  color:#777;
+  color: var(--small-text);
 }
 
 .wrapper {
@@ -61,7 +114,7 @@ a:hover small {
 }
 
 blockquote {
-  border-left:1px solid #e5e5e5;
+  border-left:1px solid var(--border);
   margin:0;
   padding:0 0 0 20px;
   font-style:italic;
@@ -69,14 +122,14 @@ blockquote {
 
 code, pre {
   font-family:Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal, Consolas, Liberation Mono, DejaVu Sans Mono, Courier New, monospace;
-  color:#333;
+  color: var(--code-text);
 }
 
 pre {
   padding:8px 15px;
-  background: #f8f8f8;
+  background: var(--code-bg);
   border-radius:5px;
-  border:1px solid #e5e5e5;
+  border:1px solid var(--border);
   overflow-x: auto;
 }
 
@@ -88,16 +141,16 @@ table {
 th, td {
   text-align:left;
   padding:5px 10px;
-  border-bottom:1px solid #e5e5e5;
+  border-bottom:1px solid var(--border);
 }
 
 dt {
-  color:#444;
+  color: var(--dt);
   font-weight:700;
 }
 
 th {
-  color:#444;
+  color: var(--th);
 }
 
 img {
@@ -105,12 +158,12 @@ img {
 }
 
 kbd {
-  background-color: #fafbfc;
-  border: 1px solid #c6cbd1;
-  border-bottom-color: #959da5;
+  background-color: var(--kbd-bg);
+  border: 1px solid var(--kbd-border);
+  border-bottom-color: var(--kbd-border-bottom);
   border-radius: 3px;
-  box-shadow: inset 0 -1px 0 #959da5;
-  color: #444d56;
+  box-shadow: inset 0 -1px 0 var(--kbd-border-bottom);
+  color: var(--kbd-text);
   display: inline-block;
   font-size: 11px;
   line-height: 10px;
@@ -129,16 +182,16 @@ ul.downloads {
   list-style:none;
   height:40px;
   padding:0;
-  background: #f4f4f4;
+  background: var(--downloads-bg);
   border-radius:5px;
-  border:1px solid #e0e0e0;
+  border:1px solid var(--downloads-border);
   width:270px;
 }
 
 .downloads li {
   width:89px;
   float:left;
-  border-right:1px solid #e0e0e0;
+  border-right:1px solid var(--downloads-border);
   height:40px;
 }
 
@@ -153,7 +206,7 @@ ul.downloads {
 .downloads a {
   line-height:1;
   font-size:11px;
-  color:#676767;
+  color: var(--downloads-text);
   display:block;
   text-align:center;
   padding-top:6px;
@@ -161,16 +214,16 @@ ul.downloads {
 }
 
 .downloads a:hover, .downloads a:focus {
-  color:#675C5C;
+  color: var(--downloads-hover);
   font-weight:bold;
 }
 
 .downloads ul a:active {
-  background-color:#f0f0f0;
+  background-color: var(--downloads-active);
 }
 
 strong {
-  color:#222;
+  color: var(--strong);
   font-weight:700;
 }
 
@@ -182,7 +235,7 @@ strong {
 .downloads a strong {
   font-size:14px;
   display:block;
-  color:#222;
+  color: var(--strong);
 }
 
 section {
@@ -197,7 +250,7 @@ small {
 
 hr {
   border:0;
-  background:#e5e5e5;
+  background: var(--border);
   height:1px;
   margin:0 0 20px;
 }
@@ -208,6 +261,29 @@ footer {
   position:fixed;
   bottom:50px;
   -webkit-font-smoothing:subpixel-antialiased;
+}
+
+.theme-toggle {
+  width: 28px;
+  height: 28px;
+  margin-left: 8px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--code-bg);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  position: relative;
+  top: -4px;
+}
+
+.theme-toggle:hover {
+  border-color: var(--link);
 }
 
 @media print, screen and (max-width: 960px) {
@@ -228,7 +304,7 @@ footer {
   }
 
   section {
-    border:1px solid #e5e5e5;
+    border:1px solid var(--border);
     border-width:1px 0;
     padding:20px 0;
     margin:0 0 20px;
